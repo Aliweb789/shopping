@@ -1,0 +1,15 @@
+Shell commands
+cd, cd /, cd .., cd ~, pwd, ls, -la, mkdir, touch, rm, -rf, name, nano, vim, cat
+
+PACKAGE MANAGER
+Node npm
+Python pip pipenv
+MacOs brew
+
+nodeJS ---> single thread with event loop (offloading)
+apache(PHP) ---> new thread, new thread, new thread .....
+
+thread:
+Java golang --> multi thread
+nodeJS --> single thread
+python --> single & multi thread
