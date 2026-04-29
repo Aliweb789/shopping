@@ -11,7 +11,7 @@
     "compute": "nodemon compute.js",
     "suggest": "nodemon suggest.js",
     "advice": "nodemon advice.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cap": "nodemon cap.js"
   },
   "dependencies": {
     "express": "^5.2.1",
