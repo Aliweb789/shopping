@@ -16,7 +16,7 @@ const list = [
 ]
 //define
 function giveAdvice(age, callback) {
-    if(typeof age !== "number") callback("insert only number", null)
+    if(typeof age !== "number") callback("insert only number!", null)
         else if(age >= 61) callback(null, list[5])
         else if(age >= 51) callback(null, list[4])
         else if(age >= 41) callback(null, list[3])
@@ -26,7 +26,7 @@ function giveAdvice(age, callback) {
 }
 
 //call
-giveAdvice(55, (err, data) => {
+giveAdvice(35, (err, data) => {
     if(err) console.log("ERROR:", err)
         else {
     console.log("data:", data)}
