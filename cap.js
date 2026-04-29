@@ -52,25 +52,44 @@ division(10, 3).then(data => {
     console.log("Error division:",err)
 }); */
 
-
 //define
 function division(a, b) {
-    return new Promise((resolve, reject) => {
-        if(b === 0) {
-            reject("Not divided by zero")
-        } else {
-            setTimeout(function() { //setInterval ishlaydi lekin bir marta takrorlanadi
-                resolve(a % b);
-            }, 2000)
-        }
-    })
+  return new Promise((resolve, reject) => {
+    if (b === 0) {
+      reject("Not divided by zero");
+    } else {
+      setTimeout(function () {
+        //setInterval ishlaydi lekin bir marta takrorlanadi
+        resolve(a % b);
+      }, 2000);
+    }
+  });
 }
 
-//call 
-division(10, 3).then(data => {
-    console.log("Result:", data)
+//call
+division(10, 3)
+  .then((data) => {
+    console.log("Result:", data);
     console.log(".......");
-    
-}).catch(err => {
-    console.log("Error division:",err)
-});
+
+    division(10, 3)
+      .then((data) => {
+        console.log("Result:", data);
+        console.log(".......");
+
+        division(10, 3)
+          .then((data) => {
+            console.log("Result:", data);
+            console.log(".......");
+          })
+          .catch((err) => {
+            console.log("Error division:", err);
+          });
+      })
+      .catch((err) => {
+        console.log("Error division:", err);
+      });
+  })
+  .catch((err) => {
+    console.log("Error division:", err);
+  });
